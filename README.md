@@ -20,7 +20,7 @@ This Chrome extension aims to make updating the `Cookie` header in Postman easie
 
 First, clone this repo to someplace on your computer.
 
-Then install it in Chrome as an "unpacked extension"[^1]:
+Then install it in Chrome as an "unpacked extension"<sup>[1](#footnote1)</sup>:
 
 1. Open the Extension Management page by navigating to `chrome://extensions`.
 2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
@@ -33,4 +33,6 @@ Then install it in Chrome as an "unpacked extension"[^1]:
 - I wanted to make this a single-click operation that didn't require a popup menu. But since I'm relying on the `navigator.clipboard` API, I need to embed the relevant code into a popup HTML page :(
 - Now that I've done this, I wonder if Chrome has a command-line API that would let me grab the cookies so that this could be done in a shell script.
 
-[^1]: Instructions copied from the [Chrome developer site](https://developer.chrome.com/extensions/getstarted#manifest)
+---
+
+<a name="footnote1">1</a>: Instructions copied from the [Chrome developer site](https://developer.chrome.com/extensions/getstarted#manifest)
