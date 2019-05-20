@@ -1,5 +1,7 @@
 # VA.gov session cookies Chrome extension
 
+This is a Chrome extension that makes it a little easier to test user auth endpoints for VA.gov locally with Postman.
+
 ## The Problem
 
 When testing VA.gov user API endpoints (such as `GET v0/user` and `POST v0/notifications/dismissed_statuses`) in Postman, you need to send the `api_session` and `vagov_session_dev` cookies with any request. You do this by creating a single header named `Cookie` to pass along the value of those cookies.
@@ -15,6 +17,10 @@ Because valid values change whenever you sign in, updating the `Cookie` header i
 ## The Solution
 
 This Chrome extension aims to make updating the `Cookie` header in Postman easier. Once you are signed into VA.gov, click on the extension's icon. This will copy the current cookie values to your clipboard. Then, in Postman, paste the clipboard contents into the value of the `Cookie` header. Voilà! You can now make user-authenticated requests in Postman.
+
+Perhaps this GIF will make things a little bit clearer
+
+![](./demo.gif)
 
 ## Installation
 
