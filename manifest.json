@@ -1,7 +1,7 @@
 {
   "name": "Copy VA.gov session cookies",
   "version": "1.0.0",
-  "description": "Copies the api and vagov session cookies so you can easily paste them into a Postman header named `Cookie`",
+  "description": "Copies the api and vagov session cookies so you can easily paste them into a REST client header named `Cookie`",
   "permissions": [
     "activeTab",
     "clipboardWrite",
@@ -15,19 +15,19 @@
   },
   "page_action": {
     "default_icon": {
-      "16": "images/va-postman-16.png",
-      "32": "images/va-postman-32.png",
-      "48": "images/va-postman-48.png",
-      "128": "images/va-postman-128.png"
+      "16": "images/va-copy-cookies-16.png",
+      "32": "images/va-copy-cookies-32.png",
+      "48": "images/va-copy-cookies-48.png",
+      "128": "images/va-copy-cookies-128.png"
     },
     "default_title": "Copy VA.gov session cookies",
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/va-postman-16.png",
-    "32": "images/va-postman-32.png",
-    "48": "images/va-postman-48.png",
-    "128": "images/va-postman-128.png"
+    "16": "images/va-copy-cookies-16.png",
+    "32": "images/va-copy-cookies-32.png",
+    "48": "images/va-copy-cookies-48.png",
+    "128": "images/va-copy-cookies-128.png"
   },
   "manifest_version": 2
 }
