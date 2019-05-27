@@ -3,30 +3,6 @@ const VAGOV_SESSION_COOKIE = 'vagov_session_dev';
 const copyCookiesButton = document.querySelector('button');
 
 /**
- * A simple helper that shows an alert to the user and then executes a callback
- * after the alert has been dismissed. This is a workaround to deal with the
- * fact that there is no way to pass a callback to window.alert().
- *
- * @param {string} msg The string to pass to the window.alert() call
- * @param {function} callback Optional callback to execute after the alert has
- * been dismissed
- */
-function alert(msg, callback = () => {}) {
-  new Promise(resolve => {
-    window.alert(msg);
-    resolve();
-  }).then(callback);
-}
-
-/**
- *
- * @param {string} alertMsg the message to pass to the JS alert()
- */
-function showAlertAndClosePopup(alertMsg) {
-  alert(alertMsg, window.close);
-}
-
-/**
  * Takes the two cookie values and creates a string that will serve as a value
  * for the 'Cookie' header in your REST client
  *
@@ -40,7 +16,9 @@ function buildCookieHeaderValue(cookie1, cookie2) {
     typeof cookie1 != 'string' ||
     typeof cookie2 != 'string'
   ) {
-    throw new TypeError('Please pass two strings to `buildCookieHeaderValue`');
+    alert('Please pass two strings to `buildCookieHeaderValue`');
+    window.close();
+    return;
   }
   return `${API_SESSION_COOKIE}=${cookie1}; ${VAGOV_SESSION_COOKIE}=${cookie2}`;
 }
@@ -64,15 +42,13 @@ copyCookiesButton.onclick = () => {
     let cookie1 = cookies.find(cookie => cookie.name === API_SESSION_COOKIE);
     let cookie2 = cookies.find(cookie => cookie.name === VAGOV_SESSION_COOKIE);
     if (!cookie1) {
-      showAlertAndClosePopup(
-        `Unable to find the '${API_SESSION_COOKIE}' cookie!`,
-      );
+      alert(`Unable to find the '${API_SESSION_COOKIE}' cookie!`);
+      window.close();
       return;
     }
     if (!cookie2) {
-      showAlertAndClosePopup(
-        `Unable to find the '${VAGOV_SESSION_COOKIE}' cookie!`,
-      );
+      alert(`Unable to find the '${VAGOV_SESSION_COOKIE}' cookie!`);
+      window.close();
       return;
     }
     const cookieValue = buildCookieHeaderValue(cookie1.value, cookie2.value);
