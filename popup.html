@@ -2,22 +2,29 @@
 <head>
   <style>
     body {
-      background: green;
+      background: rgb(17, 46, 81);
+      padding: 0.5em;
     }
     button {
-      padding: 1em;
-      width: 300px;
+      box-sizing: border-box;
+      background: #0071bb;
+      background-image: url('./images/button-label.png');
+      background-position: center;
+      background-size: calc(366px/2);
+      background-repeat: no-repeat;
+      border: 0;
+      border-radius: 5px;
       cursor: pointer;
+      width: 220px;
+      height: 40px;
     }
-
-    button > span {
-      display: block;
-      width: 100%;
+    button:hover {
+      border: 2px solid #DFCC51;
     }
   </style>
 </head>
 <body>
-  <button><span>Copy VA user auth cookies</span></button>
+  <button></button>
   <script src="popup.js"></script>
 </body>
 </html>
