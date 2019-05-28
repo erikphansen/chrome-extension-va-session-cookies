@@ -15,19 +15,19 @@
   },
   "page_action": {
     "default_icon": {
-      "16": "images/va-copy-cookies-16.png",
-      "32": "images/va-copy-cookies-32.png",
-      "48": "images/va-copy-cookies-48.png",
-      "128": "images/va-copy-cookies-128.png"
+      "16": "images/dsva-star-16.png",
+      "32": "images/dsva-star-32.png",
+      "48": "images/dsva-star-48.png",
+      "128": "images/dsva-star-128.png"
     },
     "default_title": "Copy VA.gov session cookies",
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/va-copy-cookies-16.png",
-    "32": "images/va-copy-cookies-32.png",
-    "48": "images/va-copy-cookies-48.png",
-    "128": "images/va-copy-cookies-128.png"
+    "16": "images/dsva-star-16.png",
+    "32": "images/dsva-star-32.png",
+    "48": "images/dsva-star-48.png",
+    "128": "images/dsva-star-128.png"
   },
   "manifest_version": 2
 }
