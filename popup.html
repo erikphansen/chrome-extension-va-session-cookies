@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
   <style>
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: bold;
+      font-weight: 700;
+      src: url('./fonts/Source Sans Pro.woff2') format('woff2');
+    }
     body {
       background: rgb(17, 46, 81);
       padding: 0.5em;
@@ -8,23 +14,22 @@
     button {
       box-sizing: border-box;
       background: #0071bb;
-      background-image: url('./images/button-label.png');
-      background-position: center;
-      background-size: calc(366px/2);
-      background-repeat: no-repeat;
-      border: 0;
+      border: 2px solid #0071bb;
       border-radius: 5px;
+      color: white;
       cursor: pointer;
-      width: 220px;
-      height: 40px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 0.5em 2em;
+      word-break: keep-all;
     }
     button:hover {
-      border: 2px solid #DFCC51;
+      border: 2px solid #dfcc51;
     }
   </style>
 </head>
 <body>
-  <button></button>
+  <button>Copy&nbsp;VA&nbsp;user&nbsp;cookies</button>
   <script src="popup.js"></script>
 </body>
-</html>
