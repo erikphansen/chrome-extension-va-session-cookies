@@ -26,10 +26,16 @@ function buildCookieHeaderValue(cookie1, cookie2) {
 function copyToClipboard(string) {
   navigator.clipboard
     .writeText(string)
+    .then(() => {
+      copyCookiesButton.innerText = 'Cookies copied!';
+      setTimeout(() => {
+        window.close();
+      }, 2000);
+    })
     .catch(err => {
       alert(`Unable to copy the cookies:\n${err}`);
-    })
-    .finally(window.close);
+      window.close();
+    });
 }
 
 /**
