@@ -8,6 +8,7 @@ let VAGOV_SESSION_COOKIE_NAME;
 const DOMAINS = {
   LOCAL: 'localhost',
   STAGING: 'staging.va.gov',
+  DEV: 'dev.va.gov',
   PROD: 'www.va.gov',
 };
 
@@ -15,17 +16,20 @@ const DOMAINS = {
 const apiSessionCookieDomains = {
   [DOMAINS.LOCAL]: 'localhost',
   [DOMAINS.STAGING]: 'staging-api.va.gov',
+  [DOMAINS.DEV]: 'dev-api.va.gov',
   [DOMAINS.PROD]: 'api.va.gov',
 };
 const vagovSessionCookieDomains = {
   [DOMAINS.LOCAL]: 'localhost',
   [DOMAINS.STAGING]: '.va.gov',
+  [DOMAINS.DEV]: '.va.gov',
   [DOMAINS.PROD]: '.va.gov',
 };
 // The cookie domains
 const domainToCookieDomainMap = {
   [DOMAINS.LOCAL]: 'localhost',
   [DOMAINS.STAGING]: '.va.gov',
+  [DOMAINS.DEV]: '.va.gov',
   [DOMAINS.PROD]: '.va.gov',
 };
 // The names of the VAGOV session cookie; we look for a different cookie
@@ -33,6 +37,7 @@ const domainToCookieDomainMap = {
 const domainToVAGOVSessionCookieMap = {
   [DOMAINS.LOCAL]: VAGOV_SESSION_COOKIE_DEV,
   [DOMAINS.STAGING]: VAGOV_SESSION_COOKIE_STAGING,
+  [DOMAINS.DEV]: VAGOV_SESSION_COOKIE_DEV,
   [DOMAINS.PROD]: VAGOV_SESSION_COOKIE_PROD,
 };
 
