@@ -2,27 +2,38 @@ const copyCookiesButton = document.querySelector('button');
 const API_SESSION_COOKIE_NAME = 'api_session';
 const VAGOV_SESSION_COOKIE_DEV = 'vagov_session_dev';
 const VAGOV_SESSION_COOKIE_STAGING = 'vagov_session_staging';
+const VAGOV_SESSION_COOKIE_PROD = 'vagov_session';
 let VAGOV_SESSION_COOKIE_NAME;
+
+const DOMAINS = {
+  LOCAL: 'localhost',
+  STAGING: 'staging.va.gov',
+  PROD: 'www.va.gov',
+};
 
 // The domains of the API session cookie
 const apiSessionCookieDomains = {
-  localhost: 'localhost',
-  'staging.va.gov': 'staging-api.va.gov',
+  [DOMAINS.LOCAL]: 'localhost',
+  [DOMAINS.STAGING]: 'staging-api.va.gov',
+  [DOMAINS.PROD]: 'api.va.gov',
 };
-const vagoSessionCookieDomains = {
-  localhost: 'localhost',
-  'staging.va.gov': '.va.gov',
+const vagovSessionCookieDomains = {
+  [DOMAINS.LOCAL]: 'localhost',
+  [DOMAINS.STAGING]: '.va.gov',
+  [DOMAINS.PROD]: '.va.gov',
 };
 // The cookie domains
 const domainToCookieDomainMap = {
-  localhost: 'localhost',
-  'staging.va.gov': '.va.gov',
+  [DOMAINS.LOCAL]: 'localhost',
+  [DOMAINS.STAGING]: '.va.gov',
+  [DOMAINS.PROD]: '.va.gov',
 };
 // The names of the VAGOV session cookie; we look for a different cookie
 // depending on which domain/environment we are in
 const domainToVAGOVSessionCookieMap = {
-  localhost: VAGOV_SESSION_COOKIE_DEV,
-  'staging.va.gov': VAGOV_SESSION_COOKIE_STAGING,
+  [DOMAINS.LOCAL]: VAGOV_SESSION_COOKIE_DEV,
+  [DOMAINS.STAGING]: VAGOV_SESSION_COOKIE_STAGING,
+  [DOMAINS.PROD]: VAGOV_SESSION_COOKIE_PROD,
 };
 
 function logIt(val) {
@@ -87,7 +98,7 @@ function getCookies(url) {
       let vagovSessionCookie = cookies.find(
         cookie =>
           cookie.name === VAGOV_SESSION_COOKIE_NAME &&
-          cookie.domain === vagoSessionCookieDomains[domain],
+          cookie.domain === vagovSessionCookieDomains[domain],
       );
       if (!apiSessionCookie) {
         alert(`Unable to find the '${API_SESSION_COOKIE_NAME}' cookie!`);
