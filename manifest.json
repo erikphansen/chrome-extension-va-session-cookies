@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "Copies the api and vagov session cookies so you can easily paste them into a REST client header named `Cookie`",
   "permissions": [
+    "tabs",
     "activeTab",
     "clipboardWrite",
     "cookies",
     "declarativeContent",
-    "*://localhost/*"
+    "*://localhost/*",
+    "*://*.va.gov/*"
   ],
   "background": {
     "scripts": ["background.js"],

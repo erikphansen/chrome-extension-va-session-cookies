@@ -1,5 +1,11 @@
 function checkForValidUrl(tabId, changeInfo, tab) {
-  if (tab.url && tab.url.indexOf('localhost:3001') >= 0) {
+  const validDomains = [
+    'localhost:3001',
+    'staging.va.gov',
+    'dev.va.gov',
+    'va.gov',
+  ];
+  if (tab.url && validDomains.some(domain => tab.url.includes(domain))) {
     chrome.pageAction.show(tabId);
   }
 }
