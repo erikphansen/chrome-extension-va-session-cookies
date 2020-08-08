@@ -16,7 +16,13 @@ Because valid values change whenever you sign in, updating the `Cookie` header i
 
 ## The Solution
 
-This Chrome extension aims to make it easier to update the `Cookie` header in a REST client like Postman or Paw. Once you are signed into VA.gov (in either the prod, staging, dev, or local environments), click on the extension's icon. This will copy the current cookie values to your clipboard. Then, in your REST client, paste the clipboard contents into the value of the `Cookie` header. Voilà! You can now make user-authenticated requests from your REST client.
+This Chrome extension aims to make it easier to update the `Cookie` header in a REST client like Postman or Paw. Once you are signed into VA.gov (in either the prod, staging, dev, or local environments), click on the extension's icon. This will copy the current cookie values to your clipboard.
+
+![Copy cookies with Chrome extension](./docs/copy-cookies.gif)
+
+Then, in your REST client, paste the clipboard contents into the value of the `Cookie` header. Voilà! You can now make user-authenticated requests from your REST client.
+
+![Add Cookie header in Postman](./docs/postman.gif)
 
 ## Installation
 
