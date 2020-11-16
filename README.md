@@ -12,11 +12,13 @@ An example of the value for the `Cookie` header for local testing would be:
 api_session=MU8xTVEvSFpNOUg1bmZocTZIcytRY091eWE5S3pNKzVtdEF2alVUTiswN2l0N0JTcHJodE5QZUl6aWlNbWg3ZENsZW0yRFFhc0xYMWp6UFJLc0t3bXBiRmdHWjNVMFBvWitqa3BGMG0zZ281QTNZSEVUaDErY3E4bDlNVHNYcG1TcnVZaXZaQ1dvNDNJRW1MLys3TjlKbUxpaW0rTE1xWVZvZnppcVF6MVZBRTZtZTc5QVhqVklHR2FSSmo3bTUyN1ZycTF0QmloeHVpVWgwbHhWWWViK0dKWTQ3K1dBbHFWRU40NmptMjladXN2SHBHckMveXkxOVZ3L2Jab1llZmFyeWNRUEpRaVY5cW1nUjdmSXpXZ3diajZXYStta2w5SVp6bFpmdGJ4ODlVSVF5Y2FidWZ4Q2cwMllKRE44bUNGbUR2MTFOZXl1NkdqcEtuWGNTVnpjcCtWY25GTHIvNUpKeUdGdDZZWVY0PS0ta0MyNncrb2pxNFM4S2xNRTc1VkZkUT09--068924b4abb306a7eb1b0138477b740c70f1dc68; vagov_session_dev=fzdVGr0CT1FgDv_SxjWQty1LfIF5Vgcmj9OgWC-VFx6Liyt8YkrIgjCr6NFFx__Snv9DRG61DNIRwjot-JpA6sT2S1xP17YgD4mmKI9r5XX8x4lzZp0U5LtoBBfSHRqlOlWQmVFbIEc4aQP8kxhv7o91Duu997raWNyKizUmCoVJ-H_wVWCQI-tdn48jPyNT0Wi-Y-Cq-EbFtcfDDQX0LVqpTlTaIPd_QgjuY9v1Kn96p0EcBQwJzjFv28hv9KEx
 ```
 
-Because valid values change whenever you sign in, updating the `Cookie` header is a pain; you need to copy the current cookie values from the web inspector and paste them into the long string shown above. This is slow, tedious, and error-prone. Mostly slow. And oh so tedious.
+> NOTE: The name of the second cookie is no longer stable. For example, when testing locally the cookie name might be `vagov_saml_request_localhost` instead of `vagov_session_dev`. This only makes it more tedious to get the cookie names manually, making this Chrome extension even more useful.
+
+Because valid cookie values change whenever you sign in, updating the `Cookie` header is a pain; you need to copy the current cookie values from the web inspector and paste them into the long string shown above. This is slow, tedious, and error-prone. Mostly slow. And oh so tedious.
 
 ## The Solution
 
-This Chrome extension aims to make it easier to update the `Cookie` header in a REST client like Postman or Paw. Once you are signed into VA.gov (in either the prod, staging, dev, or local environments), click on the extension's icon. This will copy the current cookie values to your clipboard.
+This Chrome extension aims to make it easier to update the `Cookie` header in a REST client like Postman or Paw. Once you are signed into VA.gov (in either the prod, staging, dev, or local environments), click on the extension's icon and then on the `Copy VA user cookies` button. This will copy the current cookie values to your clipboard.
 
 ![Copy cookies with Chrome extension](./docs/copy-cookies.gif)
 
